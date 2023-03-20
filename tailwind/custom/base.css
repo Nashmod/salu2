@@ -14,3 +14,11 @@
 body {
 	@apply bg-background text-foreground font-sans;
 }
+
+.border__img img {
+	@apply !rounded-tr-3xl !rounded-br-3xl;
+}
+
+#nav_menu.nav__scrolled {
+	@apply !bg-white !shadow;
+}

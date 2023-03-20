@@ -235,7 +235,7 @@ class Plugin
         /* wp_enqueue_script('obsidianlab-script', OBSIDIANLAB_PATH . '/js/script.js', array(), OBSIDIANLAB_VERSION, true);
         */
 
-        wp_enqueue_script('obsidianlab-script', get_template_directory_uri() . '/obsidianlab/js/script.js', array('jquery'));
+        wp_enqueue_script('obsidianlab-custom-script', get_template_directory_uri() . '/obsidianlab/js/script.js', array('jquery'));
         wp_enqueue_script('jquery-cookies', 'https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js', array('jquery'));
     }
 
