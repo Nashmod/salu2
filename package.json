@@ -3,6 +3,7 @@
 	"devDependencies": {
 		"@_tw/themejson": "^0.1.2",
 		"@angular-eslint/template-parser": "^15.1.0",
+		"@prettier/plugin-php": "^0.19.4",
 		"@tailwindcss/aspect-ratio": "^0.4.2",
 		"@tailwindcss/container-queries": "^0.1.0",
 		"@tailwindcss/forms": "^0.5.3",
@@ -10,6 +11,7 @@
 		"@tailwindcss/typography": "^0.5.9",
 		"@wordpress/prettier-config": "^2.7.0",
 		"archiver": "^5.3.1",
+		"browser-sync": "^2.29.0",
 		"cross-env": "^7.0.3",
 		"esbuild": "^0.16.16",
 		"eslint": "^8.31.0",
@@ -34,6 +36,7 @@
 		"watch:tailwind:editor": "npm run development:tailwind:editor -- --watch",
 		"watch:esbuild": "npm run development:esbuild -- --watch",
 		"watch": "run-p watch:**",
+		"browser-sync": "browser-sync start --proxy \"curapumps.local\" --files \"theme\" --no-notify --no-inject-changes",
 		"lint:eslint": "npx eslint theme/",
 		"lint:prettier": "npx prettier --check .",
 		"lint": "run-p lint:*",
