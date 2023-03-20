@@ -3,7 +3,6 @@
 namespace ObsidianLab;
 
 use ObsidianLab\ObsidianFunctions;
-use WP_User;
 
 class Plugin
 {
@@ -61,6 +60,20 @@ class Plugin
             $atts['class'] = $args->link_class;
         }
         return $atts;
+    }
+
+    /**
+     * register Menu Locations
+     */
+
+    function obsidianlab_menus()
+    {
+
+        // This theme uses wp_nav_menu() in two locations.
+        register_nav_menus([
+            "menu-header" => __("Header Menu", "westpuntcarrental"),
+            "menu-footer" => __("Footer Menu", "westpuntcarrental"),
+        ]);
     }
 
     /**
@@ -249,6 +262,7 @@ class Plugin
         add_action('widgets_init', [$this, 'wpb_obsidianlab_sidebar_one']);
         add_action('wp_before_admin_bar_render', [$this, 'admin_bar_remove_logo'], 0);
         add_action('admin_bar_menu', [$this, 'obsidianlab_customize_toolbar'], 1);
+        add_action('after_setup_theme', [$this, 'obsidianlab_menus']);
     }
 }
 

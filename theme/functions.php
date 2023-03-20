@@ -52,14 +52,6 @@ if (!function_exists('obsidianlab_setup')) :
 		 */
 		add_theme_support('post-thumbnails');
 
-		// This theme uses wp_nav_menu() in two locations.
-		register_nav_menus(
-			array(
-				'menu-1' => __('Primary', 'obsidianlab'),
-				'menu-2' => __('Footer Menu', 'obsidianlab'),
-			)
-		);
-
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
