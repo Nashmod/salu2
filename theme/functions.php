@@ -155,3 +155,86 @@ require get_template_directory() . '/inc/template-functions.php';
  * Include custom theme functions by Obsidianlab.
  */
 require get_template_directory() . "/obsidianlab/obsidianlab.php";
+
+function residential_slider_shortcode($atts)
+{
+	/**
+	 * Setup query to show the ‘services’ post type with ‘8’ posts.
+	 * Output the title with an excerpt.
+	 */
+	ob_start();
+	$args = [
+		"post_type" => "residential",
+		"post_status" => "publish",
+		"posts_per_page" => -1,
+		"orderby" => "title",
+		"order" => "ASC",
+	];
+	$loop = new WP_Query($args);
+?>
+	<style>
+		.card .image-box img {
+			width: 100%;
+			height: 100%;
+			border-radius: 24px;
+		}
+	</style>
+
+	<!-- Slider main container -->
+	<div class="swiper">
+		<!-- Additional required wrapper -->
+		<div class="swiper-wrapper">
+
+			<? while ($loop->have_posts()) :
+				$loop->the_post();
+				$image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()), "single-post-thumbnail")[0] ?? "";
+			?>
+
+				<!-- Slides -->
+				<div class="card swiper-slide ">
+					<div class="image-box relative group">
+						<img src="<?= $image ?>">
+						<h2 class="absolute text-3xl text-white bottom-3 left-9"><?= get_the_title() ?></h2>
+						<a href="#" class="opacity-0 group-hover:opacity-100 absolute bg-[#C5E6ED] text-[#000A44] -bottom-5 -right-5 border rounded-3xl px-12 py-2 transition-all ease-in duration-100"> <?= __("SHOP NOW", 'obsidianlab') ?></a>
+					</div>
+				</div>
+			<?
+			endwhile;
+			?>
+
+		</div>
+		<!-- If we need pagination -->
+		<div class="swiper-pagination"></div>
+
+		<!-- If we need navigation buttons -->
+		<div class="swiper-button-next"></div>
+
+	</div>
+
+	<script>
+		const swiper = new Swiper('.swiper', {
+			direction: 'horizontal',
+			spaceBetween: 30,
+			slidesPerView: 2.5,
+			grabCursor: true,
+			rewind: true,
+
+			// If we need pagination
+			pagination: {
+				clickable: true,
+				el: '.swiper-pagination',
+				dynamicBullets: true,
+			},
+
+			// Navigation arrows
+			navigation: {
+				nextEl: '.swiper-button-next'
+			},
+		});
+	</script>
+
+<?
+	wp_reset_postdata();
+	return ob_get_clean();
+}
+add_shortcode("residential_slider", "residential_slider_shortcode");
