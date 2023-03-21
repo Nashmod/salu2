@@ -23,3 +23,11 @@ body {
 #nav_menu.nav__scrolled {
 	@apply !bg-white !shadow;
 }
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+	padding: 30px 40px;
+	border-radius: 9999px;
+	background: #000a446e;
+	color: white;
+}

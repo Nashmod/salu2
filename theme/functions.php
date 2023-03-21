@@ -295,8 +295,8 @@ function brands_slider_shortcode($atts)
 					<div class="image-box relative group">
 						<img style="max-width: 400px;" src="<?= $image ?>">
 					</div>
-					<div class="text-left px-5 py-2"><?= __("See Brochure", "obsidianlab") ?></div>
-					<div class="text-left px-5 py-2 mb-2"><?= __("See Products", "obsidianlab") ?></div>
+					<a href="#" class="text-[#000A44] flex border-b-[1px] justify-between items-center flex-row-reverse text-left px-5 py-2 cursor-pointer"><?= __("See Brochure", "obsidianlab") ?><i class="fa-solid fa-chevron-right"></i></a>
+					<a href="#" class="text-[#000A44] flex justify-between items-center flex-row-reverse text-left px-5 py-2 cursor-pointer"><?= __("See Products", "obsidianlab") ?><i class="fa-solid fa-chevron-right"></i></a>
 				</div>
 			<?
 			endwhile;
@@ -339,3 +339,59 @@ function brands_slider_shortcode($atts)
 	return ob_get_clean();
 }
 add_shortcode("brand_slider", "brands_slider_shortcode");
+
+
+function load_map_shortcode($atts)
+{
+?>
+	<style>
+		/* Set the size of the div element that contains the map */
+		#map {
+			height: 400px;
+			/* The height is 400 pixels */
+			width: 100%;
+			/* The width is the width of the web page */
+			border-radius: 24px;
+		}
+	</style>
+	<div id="map"></div>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBb2ISRyMv7OrWzF6KQ5UDexeR25g-7tUk&callback=initMap&v=weekly" defer></script>
+	<script>
+		// Initialize and add the map
+		function initMap() {
+			// The location of Uluru
+			const uluru = {
+				lat: 12.109582,
+				lng: -68.9033314
+			};
+			// The map, centered at Uluru
+			const map = new google.maps.Map(document.getElementById("map"), {
+				zoom: 16,
+				center: uluru,
+				disableDefaultUI: true,
+				gestureHandling: 'none',
+			});
+			// The marker, positioned at Uluru
+			const marker = new google.maps.Marker({
+				position: uluru,
+				map: map,
+				icon: 'wp-content/uploads/2023/03/marker26x37.png',
+			});
+			var styles = [{
+				featureType: "poi",
+				stylers: [{
+					visibility: "off"
+				}]
+			}];
+			map.setOptions({
+				styles: styles
+			});
+
+		}
+
+
+		window.initMap = initMap;
+	</script>
+<?
+}
+add_shortcode("load_map", "load_map_shortcode");

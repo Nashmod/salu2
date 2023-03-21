@@ -13,9 +13,9 @@ use ObsidianLab\Tailwind_Walker;
 
 <footer class="bg-white" aria-labelledby="footer-heading">
 	<h2 id="footer-heading" class="sr-only">Footer</h2>
-	<div class="mx-auto max-w-7xl px-6 pb-8 pt-20 sm:pt-24 lg:px-8 lg:pt-32">
+	<div class="mx-auto max-w-7xl px-6 pb-8 lg:px-8">
 
-		<div class="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 md:flex md:items-center md:justify-between lg:mt-24">
+		<div class="border-t border-gray-900/10 pt-8 md:flex md:items-center md:justify-between">
 			<img id="site_logo" class="block h-12 w-auto" src="<?= esc_url(wp_get_attachment_image_src(get_theme_mod("custom_logo"), "full")[0] ?? "") ?>" alt="<?= esc_attr(get_bloginfo("name")) ?>">
 			<div class="footer__menu">
 				<?php wp_nav_menu([
