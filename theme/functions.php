@@ -181,7 +181,7 @@ function residential_slider_shortcode($atts)
 	</style>
 
 	<!-- Slider main container -->
-	<div class="swiper">
+	<div class="residentialSwiper swiper">
 		<!-- Additional required wrapper -->
 		<div class="swiper-wrapper">
 
@@ -212,7 +212,7 @@ function residential_slider_shortcode($atts)
 	</div>
 
 	<script>
-		const swiper = new Swiper('.swiper', {
+		const swiper = new Swiper('.residentialSwiper', {
 			direction: 'horizontal',
 			spaceBetween: 30,
 			slidesPerView: 2.5,
@@ -238,3 +238,104 @@ function residential_slider_shortcode($atts)
 	return ob_get_clean();
 }
 add_shortcode("residential_slider", "residential_slider_shortcode");
+
+function brands_slider_shortcode($atts)
+{
+	/**
+	 * Setup query to show the ‘services’ post type with ‘8’ posts.
+	 * Output the title with an excerpt.
+	 */
+	ob_start();
+	$args = [
+		"post_type" => "brand",
+		"post_status" => "publish",
+		"posts_per_page" => -1,
+		"orderby" => "title",
+		"order" => "ASC",
+	];
+	$loop = new WP_Query($args);
+?>
+	<style>
+		.brand__card {
+			background-color: #F9F9F9;
+			max-width: 398px;
+			border-radius: 24px;
+		}
+
+		.brand__card .image-box {
+			background-color: #EDE9E9;
+			border-radius: 24px 24px 0 0;
+
+		}
+
+		.brand__card .image-box img {
+			width: 100%;
+			height: 100%;
+			margin: 0 0 0 0;
+			padding: 75px 40px;
+		}
+
+		.brandSwiper {
+			padding-bottom: 30px !important;
+		}
+	</style>
+
+	<!-- Slider main container -->
+	<div class="brandSwiper swiper" dir="rtl">
+		<!-- Additional required wrapper -->
+		<div class="swiper-wrapper" dir="rtl">
+
+			<? while ($loop->have_posts()) :
+				$loop->the_post();
+				$image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()), "single-post-thumbnail")[0] ?? "";
+			?>
+
+				<!-- Slides -->
+				<div class="brand__card swiper-slide ">
+					<div class="image-box relative group">
+						<img style="max-width: 400px;" src="<?= $image ?>">
+					</div>
+					<div class="text-left px-5 py-2"><?= __("See Brochure", "obsidianlab") ?></div>
+					<div class="text-left px-5 py-2 mb-2"><?= __("See Products", "obsidianlab") ?></div>
+				</div>
+			<?
+			endwhile;
+			?>
+
+		</div>
+		<!-- If we need pagination -->
+		<div class="swiper-pagination"></div>
+
+		<!-- If we need navigation buttons -->
+		<div class="swiper-button-next"></div>
+
+	</div>
+
+	<script>
+		const brandSwiper = new Swiper('.brandSwiper', {
+			direction: 'horizontal',
+			spaceBetween: 30,
+			slidesPerView: 3,
+			grabCursor: true,
+			rewind: true,
+			reverseDirection: true,
+
+			// If we need pagination
+			pagination: {
+				clickable: true,
+				el: '.swiper-pagination',
+				dynamicBullets: true,
+			},
+
+			// Navigation arrows
+			navigation: {
+				nextEl: '.swiper-button-next'
+			},
+		});
+	</script>
+
+<?
+	wp_reset_postdata();
+	return ob_get_clean();
+}
+add_shortcode("brand_slider", "brands_slider_shortcode");
