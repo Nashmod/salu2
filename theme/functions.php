@@ -416,7 +416,59 @@ function industrial_blocks_shortcode($atts)
 	$loop = new WP_Query($args);
 ?>
 
-	<div class="grid grid-cols-2 auto-rows-auto gap-4">
+	<style>
+		.industrial__card {
+			height: 34rem;
+			perspective: 150rem;
+			position: relative;
+			max-width: 400px;
+			box-shadow: none;
+			background: none;
+		}
+
+		.industrial__card img {
+			width: 100%;
+			height: 100%;
+			margin: 0 0 0 0;
+		}
+
+		.card-side {
+			height: 33rem;
+			border-radius: 15px;
+			transition: all 0.8s ease;
+			backface-visibility: hidden;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			padding: 2rem;
+			color: white;
+		}
+
+		.card-side.back {
+			transform: rotateY(-180deg);
+			background-color: #77D1FF;
+		}
+
+		.card-side.front {
+			background-color: #0093E9;
+		}
+
+		.industrial__card:hover .card-side.front {
+			transform: rotateY(180deg);
+		}
+
+		.industrial__card:hover .card-side.back {
+			transform: rotateY(0deg);
+		}
+
+		.industrial__header {
+			writing-mode: vertical-rl;
+			text-orientation: mixed;
+		}
+	</style>
+
+	<div class="grid grid-cols-2 auto-rows-auto gap-8">
 
 		<?
 		while ($loop->have_posts()) :
@@ -424,11 +476,13 @@ function industrial_blocks_shortcode($atts)
 			$image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()), "single-post-thumbnail")[0] ?? "";
 		?>
 
-			<div class="card swiper-slide ">
-				<div class="image-box relative group">
-					<img src="<?= $image ?>">
+			<div class="industrial__card group">
+				<div style="background-image: url(<?= $image ?>); background-size: cover;" class="card-side front">
 					<h2 class="absolute text-3xl text-white bottom-3 left-9"><?= get_the_title() ?></h2>
-					<a href="#" class="opacity-0 group-hover:opacity-100 absolute bg-[#C5E6ED] text-[#000A44] -bottom-5 -right-5 border rounded-3xl px-12 py-2 transition-all ease-in duration-100"> <?= __("SHOP NOW", 'obsidianlab') ?></a>
+				</div>
+				<div class="card-side back">
+					<h2 class="industrial__header absolute right-5 top-5 text-white text-5xl m-0 w-max origin-top-right"><?= get_the_title() ?></h2>
+					<a href="#" class="absolute opacity-0 group-hover:opacity-100 bg-[#C5E6ED] text-[#000A44] -bottom-5 -right-5 border rounded-3xl px-12 py-2 transition-all ease-in duration-100 delay-200 z-50"> <?= __("SHOP NOW", 'obsidianlab') ?></a>
 				</div>
 			</div>
 		<?

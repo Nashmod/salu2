@@ -31,3 +31,7 @@ body {
 	background: #000a446e;
 	color: white;
 }
+
+.industrial_blocks_section :is(h1) {
+	color: white;
+}
