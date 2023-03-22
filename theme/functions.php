@@ -343,6 +343,7 @@ add_shortcode("brand_slider", "brands_slider_shortcode");
 
 function load_map_shortcode($atts)
 {
+	ob_start();
 ?>
 	<style>
 		/* Set the size of the div element that contains the map */
@@ -392,6 +393,50 @@ function load_map_shortcode($atts)
 
 		window.initMap = initMap;
 	</script>
+
 <?
+	return ob_get_clean();
 }
 add_shortcode("load_map", "load_map_shortcode");
+
+function industrial_blocks_shortcode($atts)
+{
+	/**
+	 * Setup query to show the ‘services’ post type with ‘8’ posts.
+	 * Output the title with an excerpt.
+	 */
+	ob_start();
+	$args = [
+		"post_type" => "industrial",
+		"post_status" => "publish",
+		"posts_per_page" => -1,
+		"orderby" => "title",
+		"order" => "ASC",
+	];
+	$loop = new WP_Query($args);
+?>
+
+	<div class="grid grid-cols-2 auto-rows-auto gap-4">
+
+		<?
+		while ($loop->have_posts()) :
+			$loop->the_post();
+			$image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()), "single-post-thumbnail")[0] ?? "";
+		?>
+
+			<div class="card swiper-slide ">
+				<div class="image-box relative group">
+					<img src="<?= $image ?>">
+					<h2 class="absolute text-3xl text-white bottom-3 left-9"><?= get_the_title() ?></h2>
+					<a href="#" class="opacity-0 group-hover:opacity-100 absolute bg-[#C5E6ED] text-[#000A44] -bottom-5 -right-5 border rounded-3xl px-12 py-2 transition-all ease-in duration-100"> <?= __("SHOP NOW", 'obsidianlab') ?></a>
+				</div>
+			</div>
+		<?
+		endwhile;
+		?>
+	</div>
+<?
+	wp_reset_postdata();
+	return ob_get_clean();
+}
+add_shortcode("industrial_blocks", "industrial_blocks_shortcode");
