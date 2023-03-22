@@ -494,3 +494,20 @@ function industrial_blocks_shortcode($atts)
 	return ob_get_clean();
 }
 add_shortcode("industrial_blocks", "industrial_blocks_shortcode");
+
+function btn_shortcode($atts)
+{
+	$default = array(
+		'class' => '',
+		'link' => '',
+		'text' => '',
+	);
+
+	$a = shortcode_atts($default, $atts);
+	ob_start();
+?>
+	<a href="<?= $a['link'] ?>" class="btn <?= $a['class'] ?>"><?= $a['text'] ?></a>
+<?
+	return ob_get_clean();
+}
+add_shortcode('cstm_button', 'btn_shortcode');

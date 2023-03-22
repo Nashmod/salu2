@@ -35,3 +35,23 @@ body {
 .industrial_blocks_section :is(h1) {
 	color: white;
 }
+
+.btn {
+	@apply inline-block px-10 py-3 text-sm font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2;
+}
+
+.industrial__btn {
+	@apply ml-auto mt-2 block w-40 rounded-full bg-[#C5E6ED] text-[#000A44] shadow-sm hover:bg-[#C5E6ED];
+}
+
+.contact__section :is(p, h1, strong) {
+	color: white !important;
+}
+
+.header__btn__one {
+	@apply mt-2 rounded-full bg-[#C5E6ED] text-[#000A44] shadow-sm hover:bg-[#000A44] hover:text-[#C5E6ED];
+}
+
+.header__btn__two {
+	@apply mt-2 rounded-full bg-[#000A44] text-white shadow-sm hover:bg-[#C5E6ED] hover:text-[#000A44];
+}
