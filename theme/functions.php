@@ -167,7 +167,7 @@ function residential_slider_shortcode($atts)
 		"post_type" => "residential",
 		"post_status" => "publish",
 		"posts_per_page" => -1,
-		"orderby" => "title",
+		"orderby" => "date",
 		"order" => "ASC",
 	];
 	$loop = new WP_Query($args);
