@@ -173,6 +173,10 @@ function residential_slider_shortcode($atts)
 	$loop = new WP_Query($args);
 ?>
 	<style>
+		.card {
+			max-width: 340px;
+		}
+
 		.card .image-box img {
 			width: 100%;
 			height: 100%;

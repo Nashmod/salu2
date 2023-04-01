@@ -49,9 +49,13 @@ body {
 }
 
 .header__btn__one {
-	@apply mt-2 rounded-full bg-[#C5E6ED] text-[#000A44] shadow-sm hover:bg-[#000A44] hover:text-[#C5E6ED];
+	@apply mt-2 mr-2 rounded-full bg-[#C5E6ED] text-[#000A44] shadow-sm hover:bg-[#000A44] hover:text-[#C5E6ED];
 }
 
 .header__btn__two {
 	@apply mt-2 rounded-full bg-[#000A44] text-white shadow-sm hover:bg-[#C5E6ED] hover:text-[#000A44];
+}
+
+a.see_more_btn {
+	color: #000a44;
 }

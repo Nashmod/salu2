@@ -16,7 +16,7 @@ use ObsidianLab\Tailwind_Walker;
 			<div class="flex">
 				<div class="-ml-2 mr-2 flex items-center md:hidden">
 					<!-- Mobile menu button -->
-					<button type="button" class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-controls="mobile-menu" aria-expanded="false">
+					<button type="button" class="inline-flex items-center justify-center rounded-md p-2 text-[#000A44] hover:bg-gray-100 hover:text-[#000A44]" aria-controls="mobile-menu" aria-expanded="false">
 						<span class="sr-only">Open main menu</span>
 						<!--
               Icon when menu is closed.
@@ -51,7 +51,7 @@ use ObsidianLab\Tailwind_Walker;
 						"menu_id" => "header-menu",
 						"container" => "",
 						"items_wrap" => '%3$s',
-						"link_class" => "inline-flex uppercase items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500",
+						"link_class" => "inline-flex uppercase items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-[#000A44]",
 						"walker" => new Tailwind_Walker(),
 					]); ?>
 				</div>
