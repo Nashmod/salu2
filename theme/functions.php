@@ -218,8 +218,8 @@ function residential_slider_shortcode($atts)
 	<script>
 		const swiper = new Swiper('.residentialSwiper', {
 			direction: 'horizontal',
-			spaceBetween: 30,
-			slidesPerView: 2.5,
+			spaceBetween: 15,
+			slidesPerView: 1.5,
 			grabCursor: true,
 			rewind: true,
 
@@ -234,6 +234,14 @@ function residential_slider_shortcode($atts)
 			navigation: {
 				nextEl: '.swiper-button-next'
 			},
+			// Responsive breakpoints
+			breakpoints: {
+				// when window width is >= 320px
+				667: {
+					slidesPerView: 2.5,
+					spaceBetween: 30,
+				},
+			}
 		});
 	</script>
 
@@ -319,7 +327,7 @@ function brands_slider_shortcode($atts)
 		const brandSwiper = new Swiper('.brandSwiper', {
 			direction: 'horizontal',
 			spaceBetween: 30,
-			slidesPerView: 3,
+			slidesPerView: 1.5,
 			grabCursor: true,
 			rewind: true,
 			reverseDirection: true,
@@ -335,6 +343,14 @@ function brands_slider_shortcode($atts)
 			navigation: {
 				nextEl: '.swiper-button-next'
 			},
+			// Responsive breakpoints
+			breakpoints: {
+				// when window width is >= 320px
+				667: {
+					spaceBetween: 30,
+					slidesPerView: 3,
+				},
+			}
 		});
 	</script>
 
@@ -425,7 +441,7 @@ function industrial_blocks_shortcode($atts)
 			height: 34rem;
 			perspective: 150rem;
 			position: relative;
-			max-width: 400px;
+			/* max-width: 400px; */
 			box-shadow: none;
 			background: none;
 		}
@@ -472,7 +488,7 @@ function industrial_blocks_shortcode($atts)
 		}
 	</style>
 
-	<div class="grid grid-cols-2 auto-rows-auto gap-8">
+	<div class="grid grid-cols-1 lg:grid-cols-2 auto-rows-auto gap-8">
 
 		<?
 		while ($loop->have_posts()) :

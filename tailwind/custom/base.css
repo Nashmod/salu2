@@ -59,3 +59,8 @@ body {
 a.see_more_btn {
 	color: #000a44;
 }
+
+.nav__expanded {
+	max-height: 40rem !important;
+	height: 100% !important;
+}
