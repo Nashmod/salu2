@@ -346,7 +346,7 @@ function brands_slider_shortcode($atts)
 			// Responsive breakpoints
 			breakpoints: {
 				// when window width is >= 320px
-				667: {
+				999: {
 					spaceBetween: 30,
 					slidesPerView: 3,
 				},
