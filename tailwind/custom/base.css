@@ -64,3 +64,7 @@ a.see_more_btn {
 	max-height: 40rem !important;
 	height: 100% !important;
 }
+
+.contact__column {
+	@apply border-white md:border-t-[1px];
+}
