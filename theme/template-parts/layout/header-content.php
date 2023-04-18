@@ -47,7 +47,7 @@ use ObsidianLab\Tailwind_Walker;
 
               Menu open: "hidden", Menu closed: "block"
             -->
-						<svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+						<svg class="block h-12 w-12" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
 							<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
 						</svg>
 						<!--
@@ -55,7 +55,7 @@ use ObsidianLab\Tailwind_Walker;
 
               Menu open: "block", Menu closed: "hidden"
             -->
-						<svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+						<svg class="hidden h-12 w-12" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
 							<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
 						</svg>
 					</button>
@@ -72,7 +72,7 @@ use ObsidianLab\Tailwind_Walker;
 				"menu_id" => "header-menu",
 				"container" => "",
 				"items_wrap" => '%3$s',
-				"link_class" => "block font-medium pl-3 pr-4 py-2 sm:pl-5 sm:pr-6 text-base",
+				"link_class" => "block font-medium pl-3 pr-4 py-2 sm:pl-5 sm:pr-6 text-base text-[#000A44]",
 				"walker" => new Tailwind_Walker(),
 			]); ?>
 		</div>

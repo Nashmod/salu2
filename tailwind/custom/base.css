@@ -68,3 +68,7 @@ a.see_more_btn {
 .contact__column {
 	@apply border-white md:border-t-[1px];
 }
+
+#nav_menu:has(.nav__expanded) {
+	@apply bg-white;
+}
