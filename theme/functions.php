@@ -156,6 +156,21 @@ require get_template_directory() . '/inc/template-functions.php';
  */
 require get_template_directory() . "/obsidianlab/obsidianlab.php";
 
+add_image_size('ease-banner', 250, 250, false);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function residential_slider_shortcode($atts)
 {
 	/**

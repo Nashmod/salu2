@@ -13,7 +13,11 @@
 */
 body {
 	@apply bg-background text-foreground font-sans;
-	font-family: "Outfit", sans-serif;
+	font-family: "Graphik", sans-serif;
+}
+
+.font-ambit {
+	font-family: "Ambit", sans-serif;
 }
 
 .border__img img {
@@ -71,4 +75,12 @@ a.see_more_btn {
 
 #nav_menu:has(.nav__expanded) {
 	@apply bg-white;
+}
+
+footer h2 {
+	@apply text-lg font-light;
+}
+
+footer p {
+	@apply font-light;
 }

@@ -24,33 +24,24 @@ jQuery(document).ready(function ($) {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-	const slider = document.querySelectorAll('.h-item-slider');
+	const controller = new ScrollMagic.Controller();
 
-	slider.forEach((slider) => {
-		let isDown = false;
-		let startX;
-		let scrollLeft;
+	// scrollingImages
+	let scrollingImages = Array.prototype.slice.call(
+		document.querySelectorAll('.scrolling__image')
+	);
+	let self = this;
 
-		slider.addEventListener('mousedown', (e) => {
-			isDown = true;
-			slider.classList.add('active');
-			startX = e.pageX - slider.offsetLeft;
-			scrollLeft = slider.scrollLeft;
-		});
-		slider.addEventListener('mouseleave', () => {
-			isDown = false;
-			slider.classList.remove('active');
-		});
-		slider.addEventListener('mouseup', () => {
-			isDown = false;
-			slider.classList.remove('active');
-		});
-		slider.addEventListener('mousemove', (e) => {
-			if (!isDown) return;
-			e.preventDefault();
-			const x = e.pageX - slider.offsetLeft;
-			const walk = (x - startX) * 3; //scroll-fast
-			slider.scrollLeft = scrollLeft - walk;
-		});
+	scrollingImages.forEach(function (self) {
+		// build a tween
+		let fadeInBottom = TweenMax.from(self, 1, { y: 100 });
+		// build a scene
+		new ScrollMagic.Scene({
+			triggerElement: self,
+			duration: 2000,
+			offset: -500,
+		})
+			.setTween(fadeInBottom)
+			.addTo(controller);
 	});
 });
