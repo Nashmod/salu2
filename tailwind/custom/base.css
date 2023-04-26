@@ -84,3 +84,11 @@ footer h2 {
 footer p {
 	@apply font-light;
 }
+
+.footer__grid {
+	grid-template-columns: auto auto auto auto;
+}
+.prose :where(img):not(:where([class~="not-prose"] *)) {
+	margin-top: 0em;
+	margin-bottom: 2em;
+}
