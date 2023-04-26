@@ -11,11 +11,11 @@
 use ObsidianLab\Tailwind_Walker;
 ?>
 
-<footer class="bg-white" aria-labelledby="footer-heading">
+<footer class="bg-white px-2 sm:px-0" aria-labelledby="footer-heading">
 	<h2 id="footer-heading" class="sr-only">Footer</h2>
 
-	<div class="mx-auto max-w-7xl px-6 pb-8 lg:px-8 ml-auto">
-		<div class="footer__grid md:grid md:grid-cols-9 md:gap-8 pt-20">
+	<div class="mx-auto max-w-7xl md:px-6 pb-8 lg:px-8 ml-auto">
+		<div class="footer__grid md:grid md:grid-cols-9 md:gap-8 md:pt-20">
 			<div></div>
 			<div class="col-span-2 mt-10 md:mt-0 ml-auto">
 				<?php if (is_active_sidebar('footer-one')) : ?>
@@ -31,7 +31,7 @@ use ObsidianLab\Tailwind_Walker;
 					</aside>
 				<?php endif; ?>
 			</div>
-			<div class="col-span-2 ml-auto">
+			<div class="col-span-2 ml-auto mt-10 md:mt-0">
 				<?php if (is_active_sidebar('footer-three')) : ?>
 					<aside class="w-fit" role="complementary" aria-label="<?php esc_attr_e('Footer three', 'westpuntcarrental'); ?>">
 						<?php dynamic_sidebar('footer-three'); ?>

@@ -92,3 +92,25 @@ footer p {
 	margin-top: 0em;
 	margin-bottom: 2em;
 }
+
+.eaze__form {
+	@apply grid grid-cols-2 gap-x-8;
+}
+
+.eaze__form :is(input, textarea) {
+	max-width: 100%;
+	width: 100%;
+	@apply border-x-0 border-b-2 border-t-0 border-[#B3B6C6] outline-none focus:border-[#161D44] focus:ring-0;
+}
+
+.eaze__form p {
+	margin: 0.25rem 0;
+}
+
+.eaze__submit__form {
+	@apply ml-auto w-40 cursor-pointer rounded-full border-none bg-[#161D44] px-10 py-3 text-sm font-semibold text-[#ffffff] hover:bg-[#1e285d];
+}
+
+.eaze__submit__form__wrapper {
+	@apply col-span-2 sm:col-span-1 sm:col-start-2;
+}
