@@ -11,17 +11,79 @@
  * `theme.json` file and is applied both to the frontend and in the block
  * editor.
 */
-body {
+.home #page {
 	background-color: #161d44;
-	font-family: "Graphik", sans-serif;
+	font-family: "Averta-Light", sans-serif;
+	background-image: radial-gradient(
+			circle at top,
+			#35a7d7 -8%,
+			#17224a 17%,
+			#161d44 30%,
+			transparent
+		),
+		radial-gradient(
+			circle at center right,
+			#35a7d7 0%,
+			#17224a 60%,
+			transparent
+		);
+	background-position: top;
 }
 
-.hero__radial {
-	background-image: radial-gradient(
-		circle at top,
-		#35a7d7 -15%,
-		#17224a 50%,
-		#161d44 60%
-	);
-	background-position: top;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+	font-family: "Ubuntu", sans-serif;
+}
+
+.salu__form {
+	@apply grid grid-cols-2 gap-x-12 text-white;
+}
+
+.salu__form p {
+	@apply m-2 text-left;
+}
+
+.salu__form label {
+	font-family: "Karla", sans-serif;
+	@apply m-2 text-left;
+}
+
+.salu__form .required__span {
+	@apply text-red-500;
+}
+
+.col__1 {
+	@apply col-span-1;
+}
+
+.col__2,
+.salu__submit__form__wrapper {
+	@apply col-span-2 text-center;
+}
+
+.salu__form :is(input, textarea) {
+	@apply w-full border-0 border-b-[1px] border-b-[rgba(255,255,255,0.5)] bg-transparent outline-none focus:border-b-[#E4700E] focus:ring-0;
+}
+
+input.salu__submit__form {
+	@apply w-auto items-center gap-x-1.5 rounded-md border-none bg-[#7DCAAC] px-6 py-4 text-sm text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600;
+}
+
+.wpcf7-spinner {
+	@apply absolute right-0;
+}
+
+.salu__submit__form__wrapper p {
+	@apply relative flex items-center justify-center;
+}
+
+.elementor-icon-list-icon i:before {
+	background-color: #4caf50;
+	padding: 10px;
+	border-radius: 9999px;
 }
