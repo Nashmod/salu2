@@ -235,14 +235,13 @@ class Plugin
         /* wp_enqueue_script('obsidianlab-script', OBSIDIANLAB_PATH . '/js/script.js', array(), OBSIDIANLAB_VERSION, true);
         */
 
+        //SCRIPTS
         wp_enqueue_script('obsidianlab-custom-script', get_template_directory_uri() . '/obsidianlab/js/script.js', array('jquery'));
         wp_enqueue_style('karla-font', 'https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+        //STYLES
         wp_enqueue_style('avertalight-font', 'https://fonts.cdnfonts.com/css/averta-blackitalic');
         wp_enqueue_style('ubuntu-font', 'https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-        wp_enqueue_script('gsap', '//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js', array('jquery'));
-        wp_enqueue_script('scrollmagic-script', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js', array('jquery'));
-        wp_enqueue_script('scrollmagic-indicator-script', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js', array('jquery'));
-        wp_enqueue_script('scrollmagic-gsap', '//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.gsap.js', array('jquery'));
     }
 
     /**
