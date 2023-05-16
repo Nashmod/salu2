@@ -83,7 +83,7 @@ a {
 }
 
 .salu__form :is(input, textarea) {
-	@apply w-full border-0 border-b-[1px] border-b-[rgba(255,255,255,0.5)] bg-transparent outline-none focus:border-b-[#E4700E] focus:ring-0;
+	@apply w-full border-0 border-b-[1px] border-b-[rgba(255,255,255,0.5)] bg-transparent outline-none transition-colors duration-300 ease-in-out focus:border-b-[#E4700E] focus:ring-0;
 }
 
 input.salu__submit__form {

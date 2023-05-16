@@ -160,15 +160,15 @@ add_image_size('ease-banner', 250, 250, false);
 
 
 
-
-
-
-
-
-
-
-
-
+function dynamic_favicon()
+{
+?>
+	<link href="/wp-content/uploads/2023/05/logo.png" rel="shortcut icon" media="(prefers-color-scheme: light)" />
+	<link href="/wp-content/uploads/2023/05/logo-white.png" rel="shortcut icon" media="(prefers-color-scheme: dark)" />
+<?php
+}
+add_action('wp_head', 'dynamic_favicon');
+add_action('admin_head', 'dynamic_favicon');
 
 
 function residential_slider_shortcode($atts)
