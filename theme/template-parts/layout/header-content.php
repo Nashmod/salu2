@@ -13,8 +13,8 @@ use ObsidianLab\Tailwind_Walker;
 
 <!-- #site-navigation -->
 <nav class="py-4">
-	<div class="mx-auto max-w-full xl:max-w-[80%] px-4 sm:px-6 lg:px-8">
-		<div class="flex h-24 justify-between border-b-[1px] border-white px-4 md:px-16 pb-6">
+	<div class="mx-auto max-w-full lg:max-w-[95%] xl:max-w-[80%] px-4 sm:px-6 lg:px-8">
+		<div class="flex h-28 justify-between border-b-[1px] border-white px-4 md:px-16 pb-6">
 			<div class="flex flex-1 justify-between lg:flex-auto lg:justify-start lg:gap-8 xl:gap-20">
 				<div class="flex flex-shrink-0 items-center">
 					<a href="<?= esc_url(home_url("/")) ?>" title="<?= esc_attr(get_bloginfo("name")) ?>">
