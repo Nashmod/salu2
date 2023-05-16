@@ -57,10 +57,10 @@ use ObsidianLab\Tailwind_Walker;
 			</div>
 			<div class="hidden lg:flex items-center">
 				<div class="flex flex-shrink-0 gap-4">
-					<a href="/#ao-registration" class="relative inline-flex items-center gap-x-1.5 rounded-md bg-[#7DCAAC] px-4 py-2 xl:px-6 xl:py-4 text-sm text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+					<a href="/ao-registration" class="relative inline-flex items-center gap-x-1.5 rounded-md bg-[#7DCAAC] px-4 py-2 xl:px-6 xl:py-4 text-sm text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
 						AO Registration
 					</a>
-					<a href="/#medical-advisory" class="relative inline-flex items-center gap-x-1.5 rounded-md bg-[#E4700E] px-3 py-2 text-sm text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+					<a href="/medical" class="relative inline-flex items-center gap-x-1.5 rounded-md bg-[#E4700E] px-3 py-2 text-sm text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
 
 						Upload Medical Info
 					</a>
