@@ -40,6 +40,22 @@ a {
 	font-family: "Ubuntu", sans-serif;
 }
 
+.nav__expanded nav {
+	@apply bg-white transition-all duration-300 ease-in-out lg:!bg-transparent;
+}
+
+.nav__expanded #site_logo_dark {
+	@apply !block lg:!hidden;
+}
+
+.nav__expanded #site_logo {
+	@apply !hidden lg:!block;
+}
+
+.nav__expanded #nav__btn {
+	@apply text-[#161d44];
+}
+
 .salu__form {
 	@apply grid grid-cols-2 gap-x-12 text-white;
 }
@@ -50,7 +66,7 @@ a {
 
 .salu__form label {
 	font-family: "Karla", sans-serif;
-	@apply m-2 text-left;
+	@apply m-2 text-left text-lg font-medium;
 }
 
 .salu__form .required__span {

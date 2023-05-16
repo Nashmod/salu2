@@ -21,7 +21,11 @@ module.exports = {
 	],
 	theme: {
 		// Extend the default Tailwind theme.
-		extend: {},
+		extend: {
+			translate: {
+				full2x: '200%',
+			},
+		},
 	},
 	corePlugins: {
 		// Disable Preflight base styles in CSS targeting the editor.

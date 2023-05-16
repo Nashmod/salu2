@@ -12,7 +12,7 @@ use ObsidianLab\Tailwind_Walker;
 ?>
 
 <footer class="bg-[#060816] py-4">
-	<div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-between md:flex-row"> <a href="<?= esc_url(home_url("/")) ?>" title="<?= esc_attr(get_bloginfo("name")) ?>">
+	<div class="mx-auto max-w-[80%] px-4 sm:px-6 lg:px-8 flex flex-col gap-16 items-center justify-between md:flex-row"> <a href="<?= esc_url(home_url("/")) ?>" title="<?= esc_attr(get_bloginfo("name")) ?>">
 			<img id="site_logo" class="block h-24 w-auto" src="<?= esc_url(wp_get_attachment_image_src(get_theme_mod("custom_logo"), "full")[0] ?? "") ?>" alt="<?= esc_attr(get_bloginfo("name")) ?>">
 			<img id="site_logo_dark" class="hidden h-24 w-auto" src="<?= esc_url(get_theme_mod("logo_dark")) ?>" alt="<?= esc_attr(get_bloginfo("name")) ?>">
 		</a>
@@ -28,6 +28,6 @@ use ObsidianLab\Tailwind_Walker;
 				]); ?>
 			</div>
 		</div>
-		<p class="mt-6 text-xs text-white md:mt-0"><?= get_theme_mod('obsidianlab_copyright_text') ?></p>
+		<p class="mt-6 text-lg font-bold text-white md:mt-0"><?= get_theme_mod('obsidianlab_copyright_text') ?></p>
 	</div>
 </footer>
