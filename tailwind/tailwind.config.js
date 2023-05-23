@@ -22,6 +22,9 @@ module.exports = {
 	theme: {
 		// Extend the default Tailwind theme.
 		extend: {
+			screens: {
+				'2lg': '1111px',
+			},
 			translate: {
 				full2x: '200%',
 			},

@@ -19,7 +19,7 @@ jQuery(document).ready(function ($) {
 	}
 
 	$('[aria-controls="mobile-menu"]').on('click', function () {
-		$('#mobile-menu').toggleClass('opacity-0 opacity-100');
+		$('#mobile-menu').toggleClass('h-0 h-100');
 		$('body').toggleClass('nav__expanded');
 	});
 });

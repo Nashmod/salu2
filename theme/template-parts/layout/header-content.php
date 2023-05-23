@@ -13,7 +13,7 @@ use ObsidianLab\Tailwind_Walker;
 
 <!-- #site-navigation -->
 <nav class="py-4">
-	<div class="mx-auto max-w-full lg:max-w-[95%] xl:max-w-[80%] px-4 sm:px-6 lg:px-8">
+	<div class="mx-auto max-w-full lg:max-w-[95%] 2lg:ax-w-[85%] xl:max-w-[1280px] px-4 sm:px-6 lg:px-8">
 		<div class="flex h-28 justify-between border-b-[1px] border-white px-4 md:px-16 pb-6">
 			<div class="flex flex-1 justify-between lg:flex-auto lg:justify-start lg:gap-8 xl:gap-20">
 				<div class="flex flex-shrink-0 items-center">
@@ -70,16 +70,18 @@ use ObsidianLab\Tailwind_Walker;
 	</div>
 
 	<!-- Mobile menu, show/hide based on menu state. -->
-	<div class="transition-all duration-300 ease-in-out opacity-0 lg:hidden" id="mobile-menu">
+	<div class="transition-all duration-300 ease-in-out overflow-hidden h-0 lg:hidden" id="mobile-menu">
 		<div class="space-y-1 pb-3 pt-2">
 			<?php wp_nav_menu([
 				"theme_location" => "menu-header",
 				"menu_id" => "header-menu",
 				"container" => "",
 				"items_wrap" => '%3$s',
-				"link_class" => "block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 sm:pl-5 sm:pr-6",
+				"link_class" => "block !border-l-0 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 sm:pl-5 sm:pr-6",
 				"walker" => new Tailwind_Walker(),
 			]); ?>
+			<a href="/ao-registration" class="block !border-l-0 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 sm:pl-5 sm:pr-6">AO Registration</a>
+			<a href="/medical" class="block !border-l-0 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-500 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-700 sm:pl-5 sm:pr-6">Upload Medical Info</a>
 		</div>
 	</div>
 </nav>
