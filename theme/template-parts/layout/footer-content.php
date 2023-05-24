@@ -23,7 +23,7 @@ use ObsidianLab\Tailwind_Walker;
 					"menu_id" => "footer-menu",
 					"container" => "",
 					"items_wrap" => '%3$s',
-					"link_class" => "w-fit col-span-4 md:col-span-1 row-span-1 sm:text-right text-[20px] leading-6 text-white",
+					"link_class" => "w-fit col-span-4 md:col-span-1 row-span-1 sm:text-right text-[14px] leading-6 text-white",
 					"walker" => new Tailwind_Walker(),
 				]); ?>
 			</div>
